@@ -12,11 +12,6 @@ const projectsSchema = mongoose.Schema(
       require: [true],
     },
 
-    state: {
-      type: String,
-      require: [true],
-    },
-
     description: {
       type: String,
       require: [true],
@@ -28,16 +23,6 @@ const projectsSchema = mongoose.Schema(
     },
 
     tech_stack: techStack,
-
-    begin_at: {
-      require: true,
-      type: Date,
-      immutable: true,
-    },
-
-    finish_at: {
-      type: Date,
-    },
   }
   //AUTOMATICALLY SET THE CREATED AND UPDATED TIME
   // { timestamps: true }

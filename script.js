@@ -4,17 +4,17 @@ const Project = require("./models/projectModel");
 exports.createProject = async () => {
   try {
     const newProject = await Project.create({
-      name: "BandSite",
-      state: "Finished",
+      name: "Simon Profile",
       description:
-        "This project is about building a website with the topic of up-and-coming music bands. The website is beautifully designed and responsive on multiple breakpoints.",
+        "Simon Profile project is a MERN application that helps you know more about me, take a look at my projects and contact me easily",
       deployment_link: "https://bandsite-platform.netlify.app/",
       tech_stack: {
-        frontend: ["JavaScript", "CSS", "HTML", "REST API", "SASS", "BEM"],
+        frontend: [
+          "Node.js, ExpressJS, ReactJS, AOS, React Type Animation,MUI Material, EmailJS, MongoDB + Mongoose, REST API",
+        ],
       },
-      begin_at: new Date("2022-10-01"),
-      finish_at: new Date("2022-10-10"),
     });
+
     console.log(newProject);
   } catch (e) {
     console.log(e);
