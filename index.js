@@ -5,8 +5,20 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const projectRoute = require("./routes/projectRoute");
 const PORT = process.env.PORT || 8080;
+const {
+  addIndexValue,
+  createProject,
+  updateIndexValue,
+  sortDocumentsBasedOnIndexValue,
+  renameCollection,
+  createCopyFromProjects,
+} = require("./controllers/projectController");
+
 //CONNECT DATABASE
 connectDB();
+// sortDocumentsBasedOnIndexValue();
+
+// createCopyFromProjects();
 //USE MIDDLEWARES
 app.use(cors());
 app.use(express.json());

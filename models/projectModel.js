@@ -7,6 +7,10 @@ const techStack = mongoose.Schema({
 
 const projectsSchema = mongoose.Schema(
   {
+    index_value: {
+      type: Number,
+      require: [true],
+    },
     name: {
       type: String,
       require: [true],
@@ -27,5 +31,6 @@ const projectsSchema = mongoose.Schema(
   //AUTOMATICALLY SET THE CREATED AND UPDATED TIME
   // { timestamps: true }
 );
-
+//BECAUSE THE NAME OF THE COLLECTION IS "projects" SO ITS DEFAULT MODEL NAME WILL BE PROJECT
+//WE CAN DEFINE AN OTHER NAME IN THE THIRD PARA
 module.exports = mongoose.model("Project", projectsSchema);
