@@ -17,10 +17,7 @@ exports.addIndexValue = async function () {
 
 //CALLBACK FUNCTION TO UPDATE THE INDEX VALUE AND SORT BASED ON INDEX VALUE
 exports.updateIndexValue = async function (name, newIndex) {
-  const foundProject = await Project.updateOne(
-    { name: name },
-    { $set: { index_value: newIndex } }
-  );
+  await Project.updateOne({ name: name }, { $set: { index_value: newIndex } });
 };
 
 //FUNCTION TO CREATE A NEW PROJECT
@@ -99,7 +96,7 @@ exports.getOneProject = async function (req, res) {
 };
 
 //CALLBACK METHOD TO CREATE A COPY OF A COLLECTION
-exports.createCopyFromProjects = async function () {
+exports.createCopyCollection = async function () {
   //USE AGGREGATION TO MIGRATE ALL MATCHED DOCUMENTS FROM PROJECTS COLLECTION TO DUPLICATES COLLECTION
   //$OUT OPERATOR WILL CREATE A NEW COLLECTION FROM THE DATA IN MATCH
   //IT WILL REPLACE A COLLECTION IF IT ALREADY EXISTS
