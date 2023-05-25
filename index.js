@@ -14,14 +14,17 @@ const {
   createCopyFromProjects,
 } = require("./controllers/projectController");
 
-//CONNECT DATABASE
-connectDB();
 // sortDocumentsBasedOnIndexValue();
 
 // createCopyFromProjects();
 //USE MIDDLEWARES
 app.use(cors());
+app.set("trust proxy", 1);
 app.use(express.json());
+
+//CONNECT DATABASE
+connectDB();
+
 app.use("/projects", projectRoute);
 //TEST THE SERVER
 app.listen(PORT, (req, res) => {
